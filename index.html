@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OYA Hermitage Medical Clinic | Edmonton Walk-In & Primary Care</title>
-  <meta name="description" content="OYA Hermitage Medical Clinic in Edmonton. Walk-in care with Dr. Bazza and new patient attachment with Dr. Adala. Online booking, location, phone, fax, map and directions." />
+  <meta name="description" content="OYA Hermitage Medical Clinic in Edmonton. Dr. Bazza online booking/walk-in care 2 PM to 7 PM. Dr. Adala accepting new patients 9 AM to 2 PM." />
   <meta name="theme-color" content="#0D1B2A" />
   <style>
     :root {
@@ -16,16 +16,11 @@
       --paper: #FFFFFF;
       --muted: #667085;
       --line: #E5DED2;
-      --soft: #F7F3EA;
-      --warning: #8A5A00;
       --shadow: 0 18px 50px rgba(13, 27, 42, 0.12);
       --radius: 24px;
     }
-
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       font-family: Inter, "Segoe UI", Arial, sans-serif;
@@ -35,354 +30,94 @@
         linear-gradient(135deg, #f8f4eb 0%, #ffffff 48%, #eef7f6 100%);
       line-height: 1.6;
     }
-
     a { color: inherit; }
-
-    .page {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 14px 0 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
+    .page { max-width: 1180px; margin: 0 auto; padding: 20px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px 0 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
     .logo {
-      width: 58px;
-      height: 58px;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Georgia, serif;
-      font-size: 27px;
-      letter-spacing: 0.03em;
-      color: var(--navy);
-      background: rgba(255,255,255,0.82);
-      box-shadow: 0 8px 24px rgba(13,27,42,0.08);
+      width: 58px; height: 58px; border: 2px solid var(--gold); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: Georgia, serif; font-size: 27px; color: var(--navy);
+      background: rgba(255,255,255,0.82); box-shadow: 0 8px 24px rgba(13,27,42,0.08);
       flex: 0 0 auto;
     }
-
-    .brand-text h1 {
-      margin: 0;
-      font-family: Georgia, serif;
-      font-size: clamp(20px, 4vw, 30px);
-      letter-spacing: 0.045em;
-      line-height: 1.1;
-    }
-
-    .brand-text p {
-      margin: 4px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .top-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
+    .brand-text h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(20px, 4vw, 30px); letter-spacing: 0.045em; line-height: 1.1; }
+    .brand-text p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+    .top-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      border-radius: 999px;
-      padding: 11px 16px;
-      font-weight: 750;
-      font-size: 14px;
-      border: 1px solid var(--line);
-      background: white;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
+      border-radius: 999px; padding: 11px 16px; font-weight: 750; font-size: 14px;
+      border: 1px solid var(--line); background: white; transition: transform 0.15s ease, box-shadow 0.15s ease; white-space: nowrap;
     }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 26px rgba(13,27,42,0.12);
-    }
-
-    .btn.primary {
-      background: var(--navy);
-      color: white;
-      border-color: var(--navy);
-    }
-
-    .btn.gold {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--navy);
-    }
-
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 26px rgba(13,27,42,0.12); }
+    .btn.primary { background: var(--navy); color: white; border-color: var(--navy); }
+    .btn.gold { background: var(--gold); border-color: var(--gold); color: var(--navy); }
     .hero {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 72%);
-      color: white;
-      border-radius: 34px;
-      padding: clamp(26px, 5vw, 54px);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-      border-bottom: 5px solid var(--gold);
+      color: white; border-radius: 34px; padding: clamp(26px, 5vw, 54px);
+      box-shadow: var(--shadow); overflow: hidden; position: relative; border-bottom: 5px solid var(--gold);
     }
-
     .hero::after {
-      content: "";
-      position: absolute;
-      right: -120px;
-      top: -120px;
-      width: 330px;
-      height: 330px;
-      border: 1px solid rgba(198,169,107,0.45);
-      border-radius: 50%;
+      content: ""; position: absolute; right: -120px; top: -120px; width: 330px; height: 330px;
+      border: 1px solid rgba(198,169,107,0.45); border-radius: 50%;
     }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 870px;
-    }
-
-    .eyebrow {
-      color: #dfc987;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    .hero h2 {
-      margin: 0;
-      font-family: Georgia, serif;
-      font-size: clamp(34px, 6vw, 62px);
-      line-height: 1.02;
-      letter-spacing: 0.01em;
-    }
-
-    .hero p {
-      margin: 18px 0 0;
-      font-size: clamp(16px, 2.4vw, 20px);
-      color: #E7EEF2;
-      max-width: 790px;
-    }
-
-    .hero-actions {
-      margin-top: 28px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .status-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 14px;
-      margin: 22px 0;
-    }
-
+    .hero-content { position: relative; z-index: 1; max-width: 870px; }
+    .eyebrow { color: #dfc987; text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; font-weight: 800; margin-bottom: 14px; }
+    .hero h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(34px, 6vw, 62px); line-height: 1.02; }
+    .hero p { margin: 18px 0 0; font-size: clamp(16px, 2.4vw, 20px); color: #E7EEF2; max-width: 790px; }
+    .hero-actions { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .status-row { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; margin: 22px 0; }
     .status-card {
-      background: rgba(255,255,255,0.9);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 18px;
-      box-shadow: 0 12px 28px rgba(13,27,42,0.07);
+      background: rgba(255,255,255,0.9); border: 1px solid var(--line); border-radius: 20px;
+      padding: 18px; box-shadow: 0 12px 28px rgba(13,27,42,0.07);
     }
-
-    .status-card strong {
-      display: block;
-      font-family: Georgia, serif;
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .status-card span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .main-grid {
-      display: grid;
-      grid-template-columns: 1.06fr 0.94fr;
-      gap: 22px;
-      align-items: start;
-      margin-top: 22px;
-    }
-
+    .status-card strong { display: block; font-family: Georgia, serif; font-size: 18px; margin-bottom: 6px; }
+    .status-card span { color: var(--muted); font-size: 14px; }
+    .main-grid { display: grid; grid-template-columns: 1.06fr 0.94fr; gap: 22px; align-items: start; margin-top: 22px; }
     .card {
-      background: rgba(255,255,255,0.94);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 12px 34px rgba(13,27,42,0.07);
-      margin-bottom: 22px;
+      background: rgba(255,255,255,0.94); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 24px; box-shadow: 0 12px 34px rgba(13,27,42,0.07); margin-bottom: 22px;
     }
-
-    .card h3 {
-      margin: 0 0 14px;
-      font-family: Georgia, serif;
-      font-size: 25px;
-      line-height: 1.15;
-    }
-
+    .card h3 { margin: 0 0 14px; font-family: Georgia, serif; font-size: 25px; line-height: 1.15; }
     .card p { color: var(--muted); margin: 0 0 14px; }
-
-    .schedule {
-      display: grid;
-      gap: 14px;
-    }
-
+    .schedule { display: grid; gap: 14px; }
     .doctor-card {
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 18px;
+      border: 1px solid var(--line); border-radius: 20px; padding: 18px;
       background: linear-gradient(180deg, #ffffff 0%, #fffdf8 100%);
     }
-
-    .doctor-card h4 {
-      margin: 0 0 8px;
-      font-size: 20px;
-      color: var(--navy);
-    }
-
+    .doctor-card h4 { margin: 0 0 8px; font-size: 20px; color: var(--navy); }
     .tag {
-      display: inline-flex;
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-weight: 800;
-      font-size: 12px;
-      margin: 4px 6px 10px 0;
-      border: 1px solid var(--line);
-      background: var(--cream);
-      color: var(--navy);
+      display: inline-flex; border-radius: 999px; padding: 6px 10px; font-weight: 800;
+      font-size: 12px; margin: 4px 6px 10px 0; border: 1px solid var(--line); background: var(--cream); color: var(--navy);
     }
-
-    .tag.teal {
-      background: #EAF7F5;
-      color: var(--teal);
-      border-color: #CDE9E5;
-    }
-
-    .tag.gold {
-      background: #FFF7E3;
-      color: #765200;
-      border-color: #EAD49B;
-    }
-
-    .tag.warning {
-      background: #FFF2F2;
-      color: #8B1A1A;
-      border-color: #F2C7C7;
-    }
-
-    .info-list {
-      list-style: none;
-      padding: 0;
-      margin: 12px 0 0;
-      display: grid;
-      gap: 10px;
-    }
-
+    .tag.teal { background: #EAF7F5; color: var(--teal); border-color: #CDE9E5; }
+    .tag.gold { background: #FFF7E3; color: #765200; border-color: #EAD49B; }
+    .tag.warning { background: #FFF2F2; color: #8B1A1A; border-color: #F2C7C7; }
+    .info-list { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 10px; }
     .info-list li {
-      display: grid;
-      grid-template-columns: 105px 1fr;
-      gap: 10px;
-      border-top: 1px solid var(--line);
-      padding-top: 10px;
-      color: var(--navy);
+      display: grid; grid-template-columns: 105px 1fr; gap: 10px;
+      border-top: 1px solid var(--line); padding-top: 10px; color: var(--navy);
     }
-
     .info-list b { color: var(--muted); font-size: 13px; }
-
     .booking-box {
-      background: linear-gradient(135deg, #ffffff, var(--cream));
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 22px;
-      box-shadow: 0 12px 30px rgba(13,27,42,0.08);
+      background: linear-gradient(135deg, #ffffff, var(--cream)); border: 1px solid var(--line);
+      border-radius: 24px; padding: 22px; box-shadow: 0 12px 30px rgba(13,27,42,0.08);
     }
-
-    .booking-box h3 {
-      margin: 0 0 8px;
-      font-family: Georgia, serif;
-      font-size: 25px;
-    }
-
-    .booking-box .btn {
-      width: 100%;
-      margin-top: 12px;
-    }
-
-    .map-card iframe {
-      width: 100%;
-      min-height: 310px;
-      border: 0;
-      border-radius: 18px;
-      background: #eee;
-    }
-
-    .quick-contact {
-      display: grid;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
+    .booking-box h3 { margin: 0 0 8px; font-family: Georgia, serif; font-size: 25px; }
+    .booking-box .btn { width: 100%; margin-top: 12px; }
+    .map-card iframe { width: 100%; min-height: 310px; border: 0; border-radius: 18px; background: #eee; }
+    .quick-contact { display: grid; gap: 10px; margin-top: 14px; }
     .quick-contact a, .quick-contact div {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 12px 14px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: white;
-      text-decoration: none;
+      display: flex; justify-content: space-between; gap: 12px; padding: 12px 14px;
+      border: 1px solid var(--line); border-radius: 14px; background: white; text-decoration: none;
     }
-
-    .quick-contact span {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .footer {
-      margin: 26px 0 12px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align: center;
-    }
-
-    .fine {
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 12px;
-    }
-
+    .quick-contact span { color: var(--muted); font-size: 13px; font-weight: 800; }
+    .footer { margin: 26px 0 12px; color: var(--muted); font-size: 13px; text-align: center; }
+    .fine { color: var(--muted); font-size: 12px; margin-top: 12px; }
     .copy-box {
-      background: #061422;
-      color: #e7f0f6;
-      border-radius: 18px;
-      padding: 16px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 12px;
-      white-space: pre-wrap;
-      overflow-x: auto;
-      margin-top: 10px;
+      background: #061422; color: #e7f0f6; border-radius: 18px; padding: 16px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; white-space: pre-wrap; overflow-x: auto; margin-top: 10px;
     }
-
     @media (max-width: 900px) {
       .topbar { align-items: flex-start; flex-direction: column; }
       .top-actions { justify-content: flex-start; width: 100%; }
@@ -391,14 +126,6 @@
       .info-list li { grid-template-columns: 1fr; }
       .page { padding: 14px; }
       .hero { border-radius: 26px; }
-    }
-
-    @media print {
-      body { background: white; }
-      .top-actions, .hero-actions, .booking-box .btn, .map-card iframe, .copy-box { display: none; }
-      .hero, .card, .booking-box, .status-card { box-shadow: none; }
-      .main-grid, .status-row { display: block; }
-      .card, .status-card { break-inside: avoid; }
     }
   </style>
 </head>
@@ -424,7 +151,7 @@
         <div class="eyebrow">OYA Hermitage Medical Clinic</div>
         <h2>Clean, simple access to walk-in and primary care.</h2>
         <p>
-          Book online or contact the clinic directly. Dr. Bazza provides walk-in care from 2:00 PM to 5:00 PM and is not accepting new patients. Dr. Adala is accepting new patients from 9:00 AM to 2:00 PM.
+          Book online or contact the clinic directly. Dr. Bazza provides walk-in care with online booking from 2:00 PM to 7:00 PM and is not accepting new patients. Dr. Adala is accepting new patients from 9:00 AM to 2:00 PM.
         </p>
         <div class="hero-actions">
           <a class="btn gold" href="https://cloud.healthquest.ca:45277/onlinebooking" target="_blank" rel="noopener">Book Online</a>
@@ -436,7 +163,7 @@
     <section class="status-row" aria-label="Clinic summary">
       <div class="status-card">
         <strong>Dr. Bazza</strong>
-        <span>Walk-in care • 2:00 PM–5:00 PM • Not accepting new patients</span>
+        <span>Walk-in care with online booking • 2:00 PM–7:00 PM • Not accepting new patients</span>
       </div>
       <div class="status-card">
         <strong>Dr. Adala</strong>
@@ -457,10 +184,11 @@
             <article class="doctor-card">
               <h4>Dr. Bazza</h4>
               <span class="tag teal">Walk-in care</span>
+              <span class="tag gold">Online booking available</span>
               <span class="tag warning">Not accepting new patients</span>
               <ul class="info-list">
-                <li><b>Hours</b><span>2:00 PM–5:00 PM</span></li>
-                <li><b>Booking</b><span>Walk-in / online booking as available</span></li>
+                <li><b>Hours</b><span>2:00 PM–7:00 PM</span></li>
+                <li><b>Booking</b><span>Online booking / walk-in care as available</span></li>
                 <li><b>Note</b><span>For walk-in medical concerns. Not for new patient attachment.</span></li>
               </ul>
             </article>
@@ -495,7 +223,7 @@
           <div class="copy-box">OYA Hermitage Medical Clinic
 12719 Victoria Trail NW, Edmonton, AB T5A 4J4
 
-Dr. Bazza: Walk-in care, 2:00 PM–5:00 PM. Not accepting new patients.
+Dr. Bazza: Walk-in care with online booking, 2:00 PM–7:00 PM. Not accepting new patients.
 Dr. Adala: Accepting new patients, 9:00 AM–2:00 PM.
 
 Book online:
